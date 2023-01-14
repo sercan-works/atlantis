@@ -165,3 +165,11 @@ class Koltuk(models.Model):
     def __str__(self):
         return '{0}/{1}'.format(self.marka,self.model) 
     
+class PC(models.Model):
+    kasa = models.ForeignKey(Kasa,on_delete=models.CASCADE,related_name="pc")
+    psu = models.ForeignKey(PSU,on_delete=models.CASCADE,related_name="pc")
+    motherboard = models.ForeignKey(MotherBoard,on_delete=models.CASCADE,related_name="pc")
+    cpu = models.ForeignKey(CPU,on_delete=models.CASCADE,related_name="pc")
+    ram = models.ManyToManyField(Ram,blank=True,null=True)
+    
+    

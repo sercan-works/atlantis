@@ -1,9 +1,8 @@
-from django.urls import path, include
-from .views import RegisterAPI,StaffCheckView
+from django.urls import include, path
 
-urlpatterns = [
-    path('auth/', include('dj_rest_auth.urls')),
-    path("register/", RegisterAPI.as_view()),
-    path("staff_check/", StaffCheckView.as_view()),
 
-]
+
+# urlpatterns = [
+
+
+# ]

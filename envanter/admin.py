@@ -1,3 +1,17 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Firma,Kasa,PSU,MotherBoard,CPU,Ram,GPU,Monitor,Kulaklık,Klavye,Mouse,MousePad,Koltuk
+
+admin.site.register(Firma)
+admin.site.register(Kasa)
+admin.site.register(PSU)
+admin.site.register(MotherBoard)
+admin.site.register(CPU)
+admin.site.register(Ram)
+admin.site.register(GPU)
+admin.site.register(Monitor)
+admin.site.register(Kulaklık)
+admin.site.register(Klavye)
+admin.site.register(Mouse)
+admin.site.register(MousePad)
+admin.site.register(Koltuk)

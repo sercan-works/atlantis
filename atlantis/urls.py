@@ -23,5 +23,6 @@ urlpatterns = [
     path('network/',include('network.urls')),
     # path('',include('logs.urls')),
     # path('users/',include('users.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
 

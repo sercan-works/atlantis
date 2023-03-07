@@ -1,0 +1,15 @@
+{% load crispy_forms_filters %}{% load tailwind_filters %} {% block content %}
+ 
+<div class="">
+    <div class="flex justify-center text-red-500">
+      <h3>Ram Create</h3>
+      <hr />
+      <form method="POST" enctype="multipart/form-data">   
+        {% csrf_token %} {{form|crispy}}
+        <br />
+        <button type="submit" class="">Kaydet</button>
+      </form>
+    </div>
+  </div>
+
+  {% endblock content %}

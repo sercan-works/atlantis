@@ -1,13 +1,22 @@
-{% load crispy_forms_filters %}{% load tailwind_filters %} {% block content %}
- 
-<div class="">
-    <div class="flex justify-center text-red-500">
-      <h3>Ram Create</h3>
-      <hr />
+{% load crispy_forms_filters %}
+{% load tailwind_filters %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+
+ {% block content %}
+
+<div class="flex flex-col items-center ">
+    <div class="p-3 my-8 rounded-lg bg-blue-500">
+        <h1>RAM Oluştur</h1>
+
+    </div>
+    <div class="flex">
+      {% comment %} <h3 class="text-lg">Ram Create</h3> {% endcomment %}
+        
       <form method="POST" enctype="multipart/form-data">   
         {% csrf_token %} {{form|crispy}}
         <br />
-        <button type="submit" class="">Kaydet</button>
+        <button type="submit" class="p-3 border-2 rounded-lg ">Kaydet</button>
       </form>
     </div>
   </div>

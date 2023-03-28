@@ -6,14 +6,43 @@
 {% block content %}
 <h1 class="text-center bg-slate-500 text-gray-50">ENVANTER TAKİP SİSTEMİ</h1>
 
-<div class="row mt-5" >
+<div class="flex flex-col mt-5 text-sm mx-auto bg-gray-300 border-2"  >
+
+    <div class="mx-auto text-center my-5 bg-blue-600 px-5 py-2 rounded-lg"><h1 class="text-lg font-bold ">PC LİSTESİ</h1></div>
+
     {% for obj in object_list %}
-    <div class="col-4">
-        <div class="cursor-pointer card shadow p-3 mb-5 bg-white rounded" >           
-            <div class="">
-                <h5 class="bg-red-500"><a href="">{{obj.role}}</a></h5>
-                <p class="">{{obj.content|truncatechars:20}}</p>
-                <p class="">{{obj.content|truncatechars:20}}</p>
+    <div class="mx-auto" >
+       
+        <div class="flex justify-items-center cursor-pointer  my-1 py-1 bg-green-50 rounded-lg border-2 border-blue-500 "  >   
+
+            <div class="flex flex-row justify-around " style="width:700px" >
+                <div class="flex flex-col items-center bg-blue-500 rounded-lg p-1">
+                    <h5 class="font-bold"><a href="">{{obj.name}}</a></h5>
+                </div>
+            
+    
+                    <div class="flex justify-around text-center">
+                        <p class="">{{obj.cpu|truncatechars:20}}</p>
+                    </div>
+                    
+                    <div class="flex justify-around text-center">
+                        <p class="">{{obj.motherboard|truncatechars:20}}</p>
+                    </div>
+                    
+                    <div class="flex justify-around text-center">
+                        <p class="">{{obj.ram|truncatechars:20}}</p>
+                    </div>
+    
+                    <div class="flex justify-around text-center">
+                        <p class="">{{obj.gpu|truncatechars:20}}</p>
+                    </div>
+             
+
+
+
+
+              
+              
             </div>
         </div>
     </div>

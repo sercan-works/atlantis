@@ -108,8 +108,8 @@ class Kulaklık(models.Model):
         ('Boş', 'Boş')
     )
     marka = models.CharField(max_length=50)
-    model = models.CharField(max_length=50,choices=OPTIONS,default='Boş')
-    strap_renk = models.CharField(max_length=50)
+    model = models.CharField(max_length=50,default='Boş')
+    strap_renk = models.CharField(max_length=50,choices=OPTIONS,blank=True, null=True)
     seri_no = models.CharField(max_length=50,blank=True, null=True)
     garanti = models.BooleanField(default=False)
     garanti_bitis_tarihi = models.DateTimeField(blank=True,null=True)
@@ -177,6 +177,12 @@ class PC(models.Model):
     motherboard = models.ForeignKey(MotherBoard,on_delete=models.CASCADE,related_name="pc")
     cpu = models.ForeignKey(CPU,on_delete=models.CASCADE,related_name="pc")
     ram = models.ManyToManyField(Ram,blank=True,null=True)
+    gpu = models.ForeignKey(GPU,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    monitor = models.ForeignKey(Monitor,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    headset = models.ForeignKey(Kulaklık,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    klavye = models.ForeignKey(Klavye,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    mouse = models.ForeignKey(Mouse,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    mouse_pad = models.ForeignKey(MousePad,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    koltuk = models.ForeignKey(Koltuk,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     
-
     

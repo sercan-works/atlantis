@@ -10,13 +10,13 @@
         <h1>RAM Register</h1>
 
     </div>
-    <div class="flex">
+    <div class="flex justify-center">
       {% comment %} <h3 class="text-lg">Ram Create</h3> {% endcomment %}
         
-      <form method="POST" enctype="multipart/form-data" class="bg-green-300 p-5">   
+      <form method="POST" enctype="multipart/form-data" class="bg-green-300 p-5 text-lg">   
         {% csrf_token %} {{form|crispy}}
         <br />
-        <button type="submit" class="p-3 border-2 rounded-lg">Kaydet</button>
+        <button type="submit" class="p-3 bg-blue-500 border-2 rounded-lg">Kaydet</button>
       </form>
     </div>
   </div>

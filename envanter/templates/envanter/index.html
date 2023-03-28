@@ -1,0 +1,25 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+
+
+{% block content %}
+<h1 class="text-center bg-slate-500 text-gray-50">ENVANTER TAKİP SİSTEMİ</h1>
+
+<div class="row mt-5" >
+    {% for obj in object_list %}
+    <div class="col-4">
+        <div class="cursor-pointer card shadow p-3 mb-5 bg-white rounded" >           
+            <div class="">
+                <h5 class="bg-red-500"><a href="">{{obj.role}}</a></h5>
+                <p class="">{{obj.content|truncatechars:20}}</p>
+                <p class="">{{obj.content|truncatechars:20}}</p>
+            </div>
+        </div>
+    </div>
+
+
+{% comment %} kjjd {% endcomment %}
+    {% endfor %}
+</div>
+{% endblock content %}

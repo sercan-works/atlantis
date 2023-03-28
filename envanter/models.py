@@ -166,10 +166,17 @@ class Koltuk(models.Model):
         return '{0}/{1}'.format(self.marka,self.model) 
     
 class PC(models.Model):
+    choise = (
+        ('VIP','VIP'),
+        ('Normal','Normal'),
+    )
+    name = models.CharField(max_length=50,blank=True, null=True,default='PC')
+    role = models.CharField(max_length=50,choices=choise,default='Normal')
     kasa = models.ForeignKey(Kasa,on_delete=models.CASCADE,related_name="pc")
     psu = models.ForeignKey(PSU,on_delete=models.CASCADE,related_name="pc")
     motherboard = models.ForeignKey(MotherBoard,on_delete=models.CASCADE,related_name="pc")
     cpu = models.ForeignKey(CPU,on_delete=models.CASCADE,related_name="pc")
     ram = models.ManyToManyField(Ram,blank=True,null=True)
     
+
     

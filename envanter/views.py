@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from envanter.forms import RamForm
-from .models import Ram
+from .models import Ram,PC
 
 def post_list(request):
-    qs = Ram.objects.all()
+    all_pc = PC.objects.all()
     context = {
-        'object_list' : qs
+        'object_list' : all_pc
     }
-    return render (request, "envanter/post_list.html", context )
+    return render (request, "envanter/index.html", context )
 
 def ram_create(request):
     form = RamForm()

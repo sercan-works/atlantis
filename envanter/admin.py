@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Firma,Kasa,PSU,MotherBoard,CPU,Ram,GPU,Monitor,Kulaklık,Klavye,Mouse,MousePad,Koltuk
+from .models import Firma,PC,Kasa,PSU,MotherBoard,CPU,Ram,GPU,Monitor,Kulaklık,Klavye,Mouse,MousePad,Koltuk
 
 admin.site.register(Firma)
 admin.site.register(Kasa)
@@ -15,3 +15,9 @@ admin.site.register(Klavye)
 admin.site.register(Mouse)
 admin.site.register(MousePad)
 admin.site.register(Koltuk)
+
+@admin.register(PC)
+class PCAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    search_fields = ['name']
+    

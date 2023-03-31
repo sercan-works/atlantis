@@ -1,0 +1,83 @@
+{% load crispy_forms_filters %}
+{% load tailwind_filters %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+
+ {% block content %}
+
+ 
+<div class="flex flex-col items-center ">
+    <div class="p-3 my-8 rounded-lg bg-red-400">
+        <h1>PC CREATE</h1>
+    </div>
+    <div class="p-3 my-4 rounded-lg bg-blue-500">
+        <a href="/"><h2>Anasayfa</h2></a>
+    </div>
+    <div class="flex justify-center">
+      {% comment %} <h3 class="text-lg">Ram Create</h3> {% endcomment %}
+        
+      <form method="POST" enctype="multipart/form-data" class="bg-green-300 p-5 text-sm">   
+        {% csrf_token %} 
+        <div class="flex ">
+            <div class="mx-2">
+                {{ form.name|as_crispy_field }}
+                {{ form.role|as_crispy_field}}
+                <div class="flex justify-start  items-center">
+                    {{ form.psu|as_crispy_field}} 
+                    {% comment %} <a href="" class="bg-blue-500 p-2 rounded-lg ">+</a>  {% endcomment %}
+                </div> 
+                
+                <div class="flex justify-start  items-center">
+                    {{ form.kasa|as_crispy_field}}
+                    {% comment %} <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a>  {% endcomment %}
+                </div> 
+                
+                <div class="flex justify-start  items-center">
+                    {{ form.motherboard|as_crispy_field}} 
+                    {% comment %} <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a>  {% endcomment %}
+                </div>
+
+                <div class="flex justify-start  items-center">
+                    {{ form.cpu|as_crispy_field}}
+                    {% comment %} <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a>  {% endcomment %}
+                </div> 
+                <div class="flex justify-start  items-center">
+                    {{ form.ram|as_crispy_field}} 
+                    <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a> 
+                </div> 
+                <div class="flex justify-start  items-center">
+                    {{ form.gpu|as_crispy_field}} 
+                    {% comment %} <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a>  {% endcomment %}
+                </div> 
+                <div class="flex justify-start items-center">
+                    {{ form.monitor|as_crispy_field}} 
+                    {% comment %} <p class="text-green-300">__</p>
+                    <a href="" class="bg-blue-500 p-2 rounded-lg">+</a>  {% endcomment %}
+                </div> 
+
+            </div>
+            <div>
+                {{ form.headset|as_crispy_field}} 
+                {{ form.klavye|as_crispy_field}} 
+                {{ form.mouse|as_crispy_field}} 
+                {{ form.mouse_pad|as_crispy_field}} 
+                {{ form.koltuk|as_crispy_field}} 
+                {{ form.notes|as_crispy_field}}
+            </div>
+
+ 
+        </div>
+        
+        
+      
+        <button type="submit" class="p-3 bg-blue-500 border-2 rounded-lg items-center">Kaydet</button>
+      </form>
+    </div>
+  </div>
+
+  {% endblock content %}

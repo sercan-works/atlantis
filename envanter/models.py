@@ -169,14 +169,16 @@ class PC(models.Model):
     choise = (
         ('VIP','VIP'),
         ('Normal','Normal'),
+        ('Yedek','Yedek'),
+        ('Hurda','Hurda'),
     )
     name = models.CharField(max_length=50,blank=True, null=True,default='PC')
     role = models.CharField(max_length=50,choices=choise,default='Normal')
     kasa = models.ForeignKey(Kasa,on_delete=models.CASCADE,related_name="pc")
-    psu = models.ForeignKey(PSU,on_delete=models.CASCADE,related_name="pc")
-    motherboard = models.ForeignKey(MotherBoard,on_delete=models.CASCADE,related_name="pc")
-    cpu = models.ForeignKey(CPU,on_delete=models.CASCADE,related_name="pc")
-    ram = models.ManyToManyField(Ram,blank=True,null=True)
+    psu = models.ForeignKey(PSU,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    motherboard = models.ForeignKey(MotherBoard,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    cpu = models.ForeignKey(CPU,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
+    ram = models.ForeignKey(Ram,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     gpu = models.ForeignKey(GPU,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     monitor = models.ForeignKey(Monitor,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     headset = models.ForeignKey(Kulaklık,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
@@ -184,5 +186,5 @@ class PC(models.Model):
     mouse = models.ForeignKey(Mouse,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     mouse_pad = models.ForeignKey(MousePad,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
     koltuk = models.ForeignKey(Koltuk,on_delete=models.CASCADE,related_name="pc",blank=True,null=True)
-    
+    notes = models.TextField(blank=True, null=True)
     

@@ -39,7 +39,12 @@ module.exports = {
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
          * and make sure the pattern below matches your project structure.
          */
-        '../../**/*.py'
+        '../../**/*.py',
+        
+        './templates/**/*.html',
+        './node_modules/flowbite/**/*.js',
+
+
     ],
     theme: {
         extend: {},
@@ -55,6 +60,7 @@ module.exports = {
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/forms'),
+        require('flowbite/plugin'),
     ],
 
 }

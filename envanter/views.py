@@ -25,6 +25,23 @@ def pc_create(request):
     }
     return render (request, "envanter/pc_create.html", context)
 
+
+def pc_edit(request, id):
+    pc = PC.objects.get(id=id)
+    form = PcForm(instance=pc)
+    if request.method == "POST":
+        form = PcForm(request.POST, instance=pc)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "PC updated successfully!")
+            return redirect("envanter:list")
+    context = {
+        'form' : form
+    }
+    return render (request, "envanter/pc_create.html", context)
+
+
+
 def ram_create(request):
     form = RamForm()
     if request.method == "POST":

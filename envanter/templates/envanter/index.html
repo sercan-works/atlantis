@@ -3,7 +3,7 @@
 
 {% load tailwind_tags %}
 {% tailwind_css %}
-
+{% load static %}
 
 {% block content %}
 
@@ -12,17 +12,9 @@
   
 <div class="flex flex-col mt-5 text-sm mx-auto bg-gray-300 border-2"  >
 
-    <div class="mx-auto text-center my-5 bg-blue-600 px-5 py-2 rounded-lg"><h1 class="text-lg font-bold ">PC LİSTESİ</h1></div>
-    <div class="mx-auto text-center my-5 bg-green-500 px-5 py-2 rounded-lg">
-        <h3 class="text-lg font-bold "><a href="create/pc">EKLE</a></h3>
-        <h3 class="text-lg font-bold "><a href="create/pc">Ram Ekle</a></h3>
-        <select name="add" id="add">
-            <option value="pc">Pc</option>
-            <option value="anakart">Anakart</option>
-            <option value="cpu">Cpu</option>
-            <option value="ram">Ram</option>
-          </select>
-    </div>
+    <div class="mx-auto text-center my-5 bg-blue-600 px-5 py-2 rounded-lg"><h1 class="text-lg font-bold text-white ">PC LİSTESİ</h1></div>
+
+    
      
     {% for obj in object_list %}
     
